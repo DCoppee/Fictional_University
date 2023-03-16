@@ -1,5 +1,5 @@
 <?php
-function university_files() {
+  function university_files() {
     //Ajout d'une font
     wp_enqueue_style('custom-google-fonts', '//fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i|Roboto:100,300,400,400i,700,700i');
     //Ajout des icônes social networks footer
@@ -11,17 +11,17 @@ function university_files() {
     
     wp_enqueue_style('our-main-styles-vendor', get_theme_file_uri('/build/index.css'));
     wp_enqueue_style('our-main-styles', get_theme_file_uri('/build/style-index.css'));
-  
+
     wp_localize_script('main-university-js', 'universityData', array(
       'root_url' => get_site_url(),
       'nonce' => wp_create_nonce('wp_rest')
     ));
   }
-add_action("wp_enqueue_scripts", "university_files");
+  add_action("wp_enqueue_scripts", "university_files");
 
-//Ajout d'un titre de page adapté et généré automatiquement
-function university_features() {
-  add_theme_support("title-tag");
-}
-add_action("after_setup_theme","university_features");
+  //Ajout d'un titre de page adapté et généré automatiquement
+  function university_features() {
+    add_theme_support("title-tag");
+  }
+  add_action("after_setup_theme","university_features");
 ?>
